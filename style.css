@@ -1,3 +1,15 @@
 .offset-top {
     margin-top: 1rem;
 }
+
+.offset-top-lg {
+    margin-top: 3rem;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+th {
+    width: 50%;
+}

@@ -82,21 +82,38 @@ function main() {
     let stopwatch = new StopwatchRam(publish);
 
     $("#button-start").on("click", function() {
+        stopwatch.start();
+
         $(this).attr("disabled", true);
         $("#button-stop").attr("disabled", false);
         $("#button-rollback").attr("disabled", true);
-        stopwatch.start();
+
+        let tr = $("<tr></tr>");
+        tr.html("<td>" + stopwatch.length() + "</td><td></td>");
+        tr.addClass("active");
+        $("#table-history_body").prepend(tr)
     });
 
     $("#button-stop").on("click", function() {
+        stopwatch.stop();
+
         $(this).attr("disabled", true);
         $("#button-start").attr("disabled", false);
         $("#button-rollback").attr("disabled", false);
-        stopwatch.stop();
+
+        let duration = stopwatch.getLastLaunch().duration;
+        let tr = $("#table-history_body > tr:first-child");
+        tr.removeClass("active");
+        tr.children().last().html(formatTime(duration));
     });
 
     $("#button-rollback").on("click", function() {
         stopwatch.rollback();
+
+        if (stopwatch.length() === 0) {
+            $("#button-rollback").attr("disabled", true);
+        }
+        $("#table-history_body > tr:not(.danger)").first().addClass("danger strikethrough");
     });
 }
 
