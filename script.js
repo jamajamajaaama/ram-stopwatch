@@ -91,7 +91,7 @@ function main() {
         let tr = $("<tr></tr>");
         tr.html("<td>" + stopwatch.length() + "</td><td></td>");
         tr.addClass("active");
-        $("#table-history_body").prepend(tr)
+        $("#table-history_body").prepend(tr);
     });
 
     $("#button-stop").on("click", function() {
