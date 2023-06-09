@@ -99,7 +99,7 @@ function main() {
 
         $(this).attr("disabled", true);
         $("#button-start").attr("disabled", false);
-        $("#button-start").value("CONTINUE");
+        $("#button-start").val("CONTINUE");
         $("#button-rollback").attr("disabled", false);
 
         let duration = stopwatch.getLastLaunch().duration;
