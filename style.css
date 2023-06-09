@@ -19,3 +19,8 @@ h1 {
 button {
 padding:10 0 ;
 }
+
+ .btn-lg {
+    padding: 20px 16px;
+    font-size: 25px;
+}
