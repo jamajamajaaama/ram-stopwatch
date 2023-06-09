@@ -10,13 +10,13 @@ class StopwatchRam {
             start: performance.now(),
             duration: 0
         });
-     #   this.timer = setTimeout(() => {
-     #       this.stop(); // Stop the stopwatch after 3 minutes
-    #        console.log("Stopwatch stopped after 3 minutes."); // Display a message
-    #        $("#button-rollback").hide();
-     #       $("#button-start").hide();
-   #         $("#button-stop").hide();
-   #     }, 3 * 60 * 10); // 3 minutes in milliseconds
+     //   this.timer = setTimeout(() => {
+     //       this.stop(); // Stop the stopwatch after 3 minutes
+    //       console.log("Stopwatch stopped after 3 minutes."); // Display a message
+    //        $("#button-rollback").hide();
+    //       $("#button-start").hide();
+   //        $("#button-stop").hide();
+   //     }, 3 * 60 * 10); // 3 minutes in milliseconds
         requestAnimationFrame(this.step.bind(this));
     }
 
